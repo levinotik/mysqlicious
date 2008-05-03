@@ -11,22 +11,22 @@ This tutorial assumes a basic knowledge of PHP, MySQL, and cron (or [http://www.
   # chmod the mirror.php file to be executable. This can be usually accomplished by using your FTP client -- look around for either a chmod command or in the Get Info or Properties window. Once you've found the chmod function, set it to 755 (or check all boxes for executable).
 
 ==2. Testing==
-In your browser, open *http://www.yourhost.com/path/to/mirror.php*.
+In your browser, open http://www.yourhost.com/path/to/mirror.php.
 
 Ignore the `#!/usr/bin/php -q` line you'll see at the top and make sure you're not getting any error messages after that line. This will also perform the first mirroring, so if everything is set up right, you'll get a bunch of `Inserted...` lines.
 
-If all looks well, proceed to the next step. If not, see the FAQ/Troubleshooting page.
+If all looks well, proceed to the next step. If not, see the [FaqTroubleshooting FAQ/Troubleshooting] page.
 
 ==3. Setting Up Cron==
-The method of configuring cron jobs varies greatly from host to host. Many times there is a graphical way to set it up from the control panel, but not always. If you don't have it in your control panel but you do have SSH access, you can configure cron by typing crontab -e. I'm assuming you've figured out how to get to the cron configuration for your host.
+The method of configuring cron jobs varies greatly from host to host. Many times there is a graphical way to set it up from the control panel, but not always. If you don't have it in your control panel but you do have SSH access, you can configure cron by typing `crontab -e`. I'm assuming you've figured out how to get to the cron configuration for your host.
 
 If you don't have access to cron, fear not. You can use pseudo-cron instead!
 
 Add the following line to your crontab:
-0 */2 * * * /path/to/mirror.php 
+`0 */2 * * * /path/to/mirror.php`
 (replacing /path/to with the actual path to your mirror.php file). This will cause mirroring to happen every two hours.
 
-==Warning==
+===Warning===
 Do not run MySQLicious on every page load or you'll get banned from the Delicious server. You must use cron or pseudo-cron.
 
 ==4. Getting Bookmarks Out==
@@ -59,4 +59,4 @@ if ( $result and mysql_num_rows($result) > 0 ) {
 }}}
 
 ==Advanced Usage==
-Other options and configuration settings for MySQLicious are described in the documentation.
+Other options and configuration settings for MySQLicious are described in the [Documentation documentation].
