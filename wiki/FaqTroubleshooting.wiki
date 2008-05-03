@@ -1,4 +1,5 @@
 #summary Common problems and questions.
+#labels Phase-Support
 
 =FAQ/Troubleshooting=
 
